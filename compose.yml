@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./front-end
+    container_name: ticket_frontend
+    restart: always
+    ports:
+      - "4001:80"
+    networks:
+      - app_net
+
+  backend:
+    build: ./back-end
+    container_name: ticket_backend
+    restart: always
+    ports:
+      - "6001:6001"
+    depends_on:
+      - db
+    environment:
+      MODE: "dev"
+      MAINTENANCE_MODE: "false"
+      SECRET_KEY: "6f6bb06f-8035-45n4a-aa67-3be503f0dfcd6"
+      PORT: "6001"
+      RATE_LIMIT_WINDOW: "15"
+      RATE_LIMIT_MAXCALL: "100"
+      RUNNING_PLATFORM: "ALL"  
+    networks:
+      - app_net
+
+  db:
+    image: postgres:15
+    container_name: ticket_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: ticketing
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - app_net
+
+networks:
+  app_net:
+
+volumes:
+  pg_data:
