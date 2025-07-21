@@ -31,12 +31,12 @@ services:
 
   db:
     image: postgres:15
-    container_name: ticket_db
+    container_name: support_db
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
-      POSTGRES_DB: ticketing
+      POSTGRES_DB: support
     volumes:
       - pg_data:/var/lib/postgresql/data
     networks:
