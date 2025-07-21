@@ -3,7 +3,7 @@
     "username": "postgres",
     "password": "root",
     "database": "support",
-    "host": "127.0.0.1",
+    "host": "support_db",
     "dialect": "postgres",
     "logging": true
   },
@@ -11,7 +11,7 @@
     "username": "postgres",
     "password": "root",
     "database": "support",
-    "host": "127.0.0.1",
+    "host": "support_db",
     "dialect": "postgres",
     "logging": false
   },
@@ -19,7 +19,7 @@
     "username": "postgres",
     "password": "root",
     "database": "support",
-    "host": "127.0.0.1",
+    "host": "support_db",
     "dialect": "postgres",
     "logging": false,
     "dialectOptions": {
