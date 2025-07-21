@@ -30,10 +30,11 @@ jobs:
           git pull origin main
 
           echo "Stopping existing containers"
-          docker compose down
+          docker-compose -f compose.yml down
 
           echo "Building and starting containers"
-          docker compose up -d --build
+          docker-compose -f compose.yml up -d --build
+
 
           echo "Deployment complete"
         EOF
