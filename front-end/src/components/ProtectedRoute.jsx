@@ -5,7 +5,7 @@ export default function ProtectedRoute({ children }) {
   const isAuthenticated = localStorage.getItem('auth') === 'true'
 
   if (!isAuthenticated) {
-    router.navigate({ to: '/login' })
+    router.navigate({ to: '/' })
     return null
   }
 
