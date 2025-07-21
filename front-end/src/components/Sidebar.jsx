@@ -43,7 +43,7 @@ export default function Sidebar({ open, onClose }) {
           <button
             onClick={() => {
               localStorage.removeItem('auth')
-              location.href = '/login'
+              location.href = '/'
             }}
             className="mt-6 px-4 py-2 rounded-md text-red-600 bg-red-50 hover:bg-red-100 transition-colors text-left font-medium"
           >
