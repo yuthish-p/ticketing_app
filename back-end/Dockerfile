@@ -4,5 +4,5 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --production
 COPY . .
-EXPOSE 6001
+EXPOSE 6002
 CMD ["node", "./bin/www"]
